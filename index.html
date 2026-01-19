@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f7;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #163172;
+    }
+    .ticket {
+      margin-top: 30px;
+      border: 2px dashed #1e3a8a;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+    .ticket h3 {
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #666;
+      margin-top: 40px;
+    }
+    img{
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Online Bus Ticket Booking</h1>
+  <p>Book your journey easily and quickly</p>
+</header>
+
+<div class="container">
+  <h2>Book Your Ticket</h2>
+  <div class="form-group">
+    <label>Passenger Name</label>
+    <input type="text" id="name" placeholder="Enter your name" />
+  </div>
+  <div class="form-group">
+    <label>From</label>
+    <input type="text" id="from" placeholder="Departure city" />
+  </div>
+  <div class="form-group">
+    <label>To</label>
+    <input type="text" id="to" placeholder="Destination city" />
+  </div>
+  <div class="form-group">
+    <label>Date of Journey</label>
+    <input type="date" id="date" />
+  </div>
+  <div class="form-group">
+    <label>Seat Number</label>
+    <select id="seat">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <button onclick="generateTicket()">Generate Ticket</button>
+
+  <div class="ticket" id="ticket">
+    <h3>Bus Ticket</h3>
+    <p><strong>Name:</strong> <span id="tName"></span></p>
+    <p><strong>From:</strong> <span id="tFrom"></span></p>
+    <p><strong>To:</strong> <span id="tTo"></span></p>
+    <p><strong>Date:</strong> <span id="tDate"></span></p>
+    <p><strong>Seat:</strong> <span id="tSeat"></span></p>
+    <p><strong>Status:</strong> Confirmed</p>
+  </div>
+</div>
+
+
+<footer>
+  © 2026 Bus Ticket System
+</footer>
+<img src="img.jpg" alt="">
+<script>
+  function generateTicket() {
+    document.getElementById('tName').innerText = document.getElementById('name').value;
+    document.getElementById('tFrom').innerText = document.getElementById('from').value;
+    document.getElementById('tTo').innerText = document.getElementById('to').value;
+    document.getElementById('tDate').innerText = document.getElementById('date').value;
+    document.getElementById('tSeat').innerText = document.getElementById('seat').value;
+    document.getElementById('ticket').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
